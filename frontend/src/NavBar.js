@@ -62,7 +62,7 @@ const Navigation = ({ web3Handler, account }) => {
           <Box display="flex" alignItems="center">
             <Logo src={logo} />
             <Typography variant="h6" component="div">
-              BlockSHK Docs
+              BlockSHK Player
             </Typography>
           </Box>
           <Box display="flex" alignItems="center">
