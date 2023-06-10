@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Application from "./Application";
 import SignIn from "./SignIn";
+import Register from "./Register";
 import Navigation from "./NavBar";
 import { useState } from "react";
 import { ethers } from "ethers";
@@ -59,6 +60,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/application" element={<Application />} />
               <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           )}
         </div>

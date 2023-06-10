@@ -62,7 +62,7 @@ const Navigation = ({ web3Handler, account }) => {
           <Box display="flex" alignItems="center">
             <Logo src={logo} />
             <Typography variant="h6" component="div">
-              BlockSHK Docs
+              BlockSHK Player
             </Typography>
           </Box>
           <Box display="flex" alignItems="center">
@@ -75,6 +75,11 @@ const Navigation = ({ web3Handler, account }) => {
             <StyledLink component={RouterLink} to="/sign-in">
               Sign In
             </StyledLink>
+            {!localStorage.getItem("token") && (
+              <StyledLink component={RouterLink} to="/register">
+                Register
+              </StyledLink>
+            )}
             {account ? (
               <StyledLink
                 href={`https://etherscan.io/address/${account}`}

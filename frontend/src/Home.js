@@ -1,11 +1,19 @@
 import React from "react";
-import { Card, CardContent, Typography, Box, Container } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Container,
+  IconButton,
+} from "@mui/material";
 import { styled } from "@mui/system";
-import backgroundImage from "./background_3.jpg";
+import newBackgroundImage from "./background_4.jpg";
+import mediaPlayerIcon from "./media_player_icon.png";
 
 const BackgroundImage = styled("div")({
-  backgroundImage: `url(${backgroundImage})`,
-  height: "93vh", // Adjusted to account for the navbar
+  backgroundImage: `url(${newBackgroundImage})`,
+  height: "93vh",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
@@ -16,37 +24,49 @@ const BackgroundImage = styled("div")({
 });
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  minHeight: "70vh",
+  minWidth: "300px",
+  minHeight: "60vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   borderRadius: theme.spacing(2),
-  backgroundColor: "rgba(255, 255, 255, 0.8)", //Added rgba values to make the card slightly transparent
+  backgroundColor: "rgba(255, 255, 255, 0.9)",
+  padding: theme.spacing(4),
+}));
+
+const IconWrapper = styled(IconButton)(({ theme }) => ({
+  fontSize: "3em",
+  backgroundColor: "#3f51b5", // Hardcoded color value for demonstration
+  padding: theme.spacing(2),
+  marginBottom: theme.spacing(2),
 }));
 
 const Home = () => {
   return (
     <BackgroundImage>
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <Box mt={5}>
           <StyledCard variant="outlined">
+            <IconWrapper>
+              <img
+                src={mediaPlayerIcon}
+                alt="Media Player"
+                width="50"
+                height="50"
+              />
+            </IconWrapper>
             <CardContent>
-              <Typography variant="h3" component="div" gutterBottom>
-                Welcome to Our Blockchain-Based License Application
+              <Typography variant="h4" component="div" gutterBottom>
+                Welcome to Our Secure Media Player
               </Typography>
               <Typography variant="body1" gutterBottom>
-                This application serves to demonstrate the use of
-                blockchain-based licensing. We utilize the immutability and
-                security provided by blockchain technology to create a unique
-                and secure signing mechanism.
+                Experience high-quality media content with the added security
+                and trust of blockchain technology.
               </Typography>
               <Typography variant="body1">
-                By signing in, users will be provided with a nonce that will be
-                signed with their private key. This will enable them to access
-                our document editor. This process ensures the validity and
-                integrity of the user, allowing us to provide a safer, more
-                secure experience.
+                Sign in to verify your blockchain license and unlock access to
+                an array of media.
               </Typography>
             </CardContent>
           </StyledCard>
