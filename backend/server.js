@@ -36,7 +36,7 @@ let users = [
     address: "0x704bc8d7952756e1adbee8ad8761bfe1c85cbde6",
     tokenId: "1",
     messageHash:
-      "0x539892d0003e236dc4f68a9df08086329c96ea5942808a3d65be672ac59fff1b",
+      "0x9f41c746f8bc75841afb829ddecab0bf55ccec6081f8e68d1532deab5a8ac246",
   },
 ]; // In a real application, you should use a database
 let nonces = [];
