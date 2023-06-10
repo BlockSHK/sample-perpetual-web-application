@@ -56,11 +56,11 @@ const SignIn = () => {
   const getNonce = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://b1r5aq31x2.execute-api.us-east-1.amazonaws.com/Prod/activation/nonce",
-        { address }
-      );
-      setNonce(response.data.payload.nonce);
+      const response = await axios.post("http://localhost:3000/nonce", {
+        address,
+      });
+      // Set the nonce from the response
+      setNonce(response.data.nonce);
     } catch (error) {
       setError(error.message);
     } finally {

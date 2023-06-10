@@ -75,6 +75,11 @@ const Navigation = ({ web3Handler, account }) => {
             <StyledLink component={RouterLink} to="/sign-in">
               Sign In
             </StyledLink>
+            {!localStorage.getItem("token") && (
+              <StyledLink component={RouterLink} to="/register">
+                Register
+              </StyledLink>
+            )}
             {account ? (
               <StyledLink
                 href={`https://etherscan.io/address/${account}`}
