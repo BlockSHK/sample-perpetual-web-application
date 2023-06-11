@@ -36,7 +36,7 @@ let users = [
     address: "0x704bc8d7952756e1adbee8ad8761bfe1c85cbde6",
     tokenId: "1",
     messageHash:
-      "0x9f41c746f8bc75841afb829ddecab0bf55ccec6081f8e68d1532deab5a8ac246",
+      "0xa3c0dfbc612b45ac354e59b7b13bcc82c9f7fa25bafa53dda36b2a3245938540",
   },
 ]; // In a real application, you should use a database
 let nonces = [];
@@ -49,6 +49,9 @@ app.post("/register", async (req, res) => {
   const hash = crypto.randomBytes(20).toString("hex");
   const messageHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(hash));
   console.log("messageHash", messageHash);
+  users = users.filter(
+    (element) => !(element.address === address && element.tokenId === tokenId)
+  );
   const user = { address, tokenId, messageHash };
   users.push(user);
   console.log("hash", hash);
